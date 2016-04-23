@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="cn.studyjams.s1.sj43.jiangjingwei.activity.HomeActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/xibi_blood"
+        android:scaleType="centerCrop"
+        />
+
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/home_mkt"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@drawable/mkt_awake_360"-->
+        <!--&gt;-->
+
+
+    <!--</RelativeLayout>-->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true">
+
+
+
+        <org.askerov.dynamicgrid.DynamicGridView
+            android:id="@+id/gv_home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp"
+            android:verticalSpacing="72dp"
+            android:horizontalSpacing="16dp"
+            android:numColumns="2"
+            />
+
+    </FrameLayout>
+
+</RelativeLayout>

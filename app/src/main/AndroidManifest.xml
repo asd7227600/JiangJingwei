@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="cn.studyjams.s1.sj43.jiangjingwei"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.HomeActivity">
+        </activity>
+        <activity android:name=".activity.FirstPickActivity">
+        </activity>
+        <activity android:name=".activity.AtentionActivity">
+        </activity>
+        <activity android:name=".activity.BuildTeamActivity">
+        </activity>
+        <activity android:name=".activity.PrimeStrategyActivity">
+        </activity>
+        <activity android:name=".activity.PrimeActivityChooseActivity">
+        </activity>
+    </application>
+
+</manifest>
