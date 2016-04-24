@@ -19,7 +19,7 @@
         </activity>
         <activity android:name=".activity.FirstPickActivity">
         </activity>
-        <activity android:name=".activity.AtentionActivity">
+        <activity android:name=".activity.AttentionActivity">
         </activity>
         <activity android:name=".activity.BuildTeamActivity">
         </activity>
@@ -27,6 +27,7 @@
         </activity>
         <activity android:name=".activity.PrimeActivityChooseActivity">
         </activity>
+
     </application>
 
 </manifest>

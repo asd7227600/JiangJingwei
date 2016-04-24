@@ -45,4 +45,6 @@ public class HomeAdapter extends BaseDynamicGridAdapter {
 
         return view;
     }
+
+
 }

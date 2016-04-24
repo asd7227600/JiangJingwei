@@ -11,9 +11,15 @@
         style="@style/CommonTitle"
         android:text="@string/first_pick"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ShowText"
+        android:onClick="showText"/>
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <us.feras.mdv.MarkdownView
             android:id="@+id/mv_first_pick"
@@ -23,6 +29,16 @@
 
         </us.feras.mdv.MarkdownView>
 
+
     </ScrollView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test"
+
+        />
+
+
 
 </LinearLayout>

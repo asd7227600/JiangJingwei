@@ -2,12 +2,14 @@ package cn.studyjams.s1.sj43.jiangjingwei.activity;
 
 import android.content.Intent;
 import android.os.Handler;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import cn.studyjams.s1.sj43.jiangjingwei.R;
 
-public class SplashActivity extends AppCompatActivity {
+public class SplashActivity extends FragmentActivity {
 
     private Handler handler = new Handler();
 

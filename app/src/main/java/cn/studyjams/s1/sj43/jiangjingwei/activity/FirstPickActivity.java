@@ -1,14 +1,18 @@
 package cn.studyjams.s1.sj43.jiangjingwei.activity;
 
 import android.net.Uri;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 
 import cn.studyjams.s1.sj43.jiangjingwei.R;
 import us.feras.mdv.MarkdownView;
 
-public class FirstPickActivity extends AppCompatActivity {
+public class FirstPickActivity extends FragmentActivity {
 
     private static final String TAG = "FirstPick";
     private MarkdownView markdownView;
@@ -19,18 +23,26 @@ public class FirstPickActivity extends AppCompatActivity {
         setContentView(R.layout.activity_first_pick);
 
         Log.d(TAG, "onCreate: start on markdownView");
-        this.getAssets();
         markdownView = (MarkdownView) findViewById(R.id.mv_first_pick);
 //        markdownView.loadMarkdown("## The Title");
 
+        markdownView.loadMarkdownFile("file:///android_asset/first_pick.md");
 
-//        Uri uri;
-//        uri = Uri.parse("android.resource://your.app.package/" + R.raw.test);
-//
-//        markdownView.loadMarkdownFile(uri.getPath());
-
-        markdownView.loadMarkdownFile("file:///android_asset/test.md");
         Log.d(TAG, "onCreate: end of markdownView");
 
+    }
+
+    public void showText(View view) {
+        if (markdownView.getVisibility() == View.VISIBLE) {
+            Log.d(TAG, "showText: the view's visible is: " + markdownView
+                    .getVisibility());
+                    Log.d(TAG, "showText: set invisible");
+            markdownView.setVisibility(View.GONE);
+            Log.d(TAG, "showText: the view's visible is: " + markdownView
+                    .getVisibility());
+        } else {
+            Log.d(TAG, "showText: set visible");
+            markdownView.setVisibility(View.VISIBLE);
+        }
     }
 }

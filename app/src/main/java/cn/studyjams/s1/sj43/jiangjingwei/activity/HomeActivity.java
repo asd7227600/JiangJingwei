@@ -1,13 +1,12 @@
 package cn.studyjams.s1.sj43.jiangjingwei.activity;
 
 import android.content.Intent;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 
 import org.askerov.dynamicgrid.DynamicGridView;
 
@@ -18,7 +17,7 @@ import cn.studyjams.s1.sj43.jiangjingwei.R;
 import cn.studyjams.s1.sj43.jiangjingwei.adapter.HomeAdapter;
 import cn.studyjams.s1.sj43.jiangjingwei.bean.HomeItem;
 
-public class HomeActivity extends AppCompatActivity implements AdapterView
+public class HomeActivity extends FragmentActivity implements AdapterView
         .OnItemClickListener {
 
     private static final String TAG = "HomeActivity";
@@ -112,11 +111,12 @@ public class HomeActivity extends AppCompatActivity implements AdapterView
 
         switch ((int) id) {
             case 0:
-                Intent intent = new Intent(this, FirstPickActivity.class);
-                startActivity(intent);
+                Intent intent0 = new Intent(this, FirstPickActivity.class);
+                startActivity(intent0);
                 break;
             case 1:
-
+                Intent intent1 = new Intent(this, AttentionActivity.class);
+                startActivity(intent1);
                 break;
             case 2:
 
