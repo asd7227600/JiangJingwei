@@ -8,13 +8,10 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+
 
 import cn.studyjams.s1.sj43.jiangjingwei.R;
-import cn.studyjams.s1.sj43.jiangjingwei.fragment.NeverDoFragment;
+import cn.studyjams.s1.sj43.jiangjingwei.fragment.AttentionFragment;
 
 public class AttentionActivity extends FragmentActivity implements ActionBar.TabListener {
 
@@ -44,8 +41,7 @@ public class AttentionActivity extends FragmentActivity implements ActionBar.Tab
         });
 
         for (int i = 0; i < mAppSectionsPagerAdapter.getCount(); i++) {
-            actionBar.newTab().setText(mAppSectionsPagerAdapter.getPageTitle
-                    (i)).setTabListener(this);
+            actionBar.newTab().setText(mAppSectionsPagerAdapter.getPageTitle(i)).setTabListener(this);
 
         }
     }
@@ -65,21 +61,6 @@ public class AttentionActivity extends FragmentActivity implements ActionBar.Tab
 
     }
 
-//    @Override
-//    public void onTabSelected(android.support.v7.app.ActionBar.Tab tab, android.support.v4.app.FragmentTransaction ft) {
-//                mViewPager.setCurrentItem(tab.getPosition());
-//
-//    }
-//
-//    @Override
-//    public void onTabUnselected(android.support.v7.app.ActionBar.Tab tab, android.support.v4.app.FragmentTransaction ft) {
-//
-//    }
-//
-//    @Override
-//    public void onTabReselected(android.support.v7.app.ActionBar.Tab tab, android.support.v4.app.FragmentTransaction ft) {
-//
-//    }
 
     private class AppSectionsPagerAdapter extends FragmentPagerAdapter {
 
@@ -91,11 +72,11 @@ public class AttentionActivity extends FragmentActivity implements ActionBar.Tab
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    return new NeverDoFragment();
+                    return new AttentionFragment(position);
                 case 1:
-                    return new NeverDoFragment();
+                    return new AttentionFragment(position);
                 case 2:
-                    return new NeverDoFragment();
+                    return new AttentionFragment(position);
                 default:
 
             }
@@ -109,28 +90,28 @@ public class AttentionActivity extends FragmentActivity implements ActionBar.Tab
 
         @Override
         public CharSequence getPageTitle(int position) {
-            switch (position) {
-                case 0:
-                    return "绝对别做的事";
-                case 1:
-                    return "正确的态度";
-                case 2:
-                    return "踏上正轨";
-                default:
-                    return null;
+//            switch (position) {
+//                case 0:
+//                    return "绝对别做的事";
+//
+//                case 1:
+//                    return "正确的态度";
+//
+//                case 2:
+//                    return "踏上正轨";
+//
+//                default:
+//                    return null;
+//            }
+            if (position == 0) {
+                return "绝对别做的事";
+            } else if (position == 1) {
+                return "正确的态度";
+            } else {
+                return "踏上正轨";
             }
-
         }
     }
-
-//    public static class NeverDoFragment extends Fragment {
-//
-//        @Nullable
-//        @Override
-//        public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-//            View view = inflater.inflate(R.layout.)
-//        }
-//    }
 
 
 }
