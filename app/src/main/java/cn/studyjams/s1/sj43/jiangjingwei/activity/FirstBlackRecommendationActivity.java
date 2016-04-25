@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ExpandableListView;
+import android.widget.ExpandableListView.OnGroupClickListener;
+import android.widget.ExpandableListView.OnChildClickListener;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -15,7 +17,8 @@ import cn.studyjams.s1.sj43.jiangjingwei.bean.FirstBlackText;
 import cn.studyjams.s1.sj43.jiangjingwei.bean.Item;
 import cn.studyjams.s1.sj43.jiangjingwei.bean.Group;
 
-public class FirstBlackRecommendationActivity extends AppCompatActivity {
+public class FirstBlackRecommendationActivity extends AppCompatActivity
+        implements OnGroupClickListener, OnChildClickListener {
 
     private ArrayList<Group> gData = null;
 //    private ArrayList<ArrayList<Item>> iData = null;
@@ -44,8 +47,11 @@ public class FirstBlackRecommendationActivity extends AppCompatActivity {
 
 
     private FirstBlackText fbt;
-
+    // 记录ListView数量
     private int num;
+    // 记录最后打开的groupPosition位置
+    private int mLastOpenGroupPosition = -1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +63,7 @@ public class FirstBlackRecommendationActivity extends AppCompatActivity {
 
         initNum();
         initData();
+        initListener();
         elv.setAdapter(new FirstBlackAdapter(gData, iData, mContext));
         elv.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
@@ -68,6 +75,11 @@ public class FirstBlackRecommendationActivity extends AppCompatActivity {
                 return true;
             }
         });
+    }
+
+    private void initListener() {
+        elv.setOnGroupClickListener(this);
+        elv.setOnChildClickListener(this);
     }
 
     private void initNum() {
@@ -95,5 +107,34 @@ public class FirstBlackRecommendationActivity extends AppCompatActivity {
 
 //        mAdapter = new FirstBlackAdapter(gData, iData, mContext);
 //        elv.setAdapter(mAdapter);
+    }
+
+    @Override
+    public boolean onChildClick(ExpandableListView parent, View v, int
+            groupPosition, int childPosition, long id) {
+        return false;
+    }
+
+    @Override
+    public boolean onGroupClick(ExpandableListView parent, View v, int
+            groupPosition, long id) {
+        if (groupPosition != mLastOpenGroupPosition) {
+            elv.collapseGroup(mLastOpenGroupPosition);
+        }
+
+        if (elv.isGroupExpanded(groupPosition)) {
+            // Close
+            elv.collapseGroup(groupPosition);
+        } else {
+            // Open
+            elv.expandGroup(groupPosition);
+            // Set Top
+            elv.setSelectedGroup(groupPosition);
+            // Record the position
+            mLastOpenGroupPosition = groupPosition;
+        }
+
+        return true;    // 表示自己消费了时间,不交给基类处理
+                        // 表示自己没有处理,交给基类
     }
 }
