@@ -8,13 +8,15 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 
 import cn.studyjams.s1.sj43.jiangjingwei.R;
 import cn.studyjams.s1.sj43.jiangjingwei.fragment.AttentionFragment;
 
-public class AttentionActivity extends FragmentActivity implements ActionBar.TabListener {
+public class AttentionActivity extends AppCompatActivity implements android.support.v7.app.ActionBar
+        .TabListener {
 
     private static final String TAG = "Attention";
     ViewPager mViewPager;
@@ -28,9 +30,9 @@ public class AttentionActivity extends FragmentActivity implements ActionBar.Tab
         mAppSectionsPagerAdapter = new AppSectionsPagerAdapter
                 (getSupportFragmentManager());
 
-        final ActionBar actionBar = getActionBar();
+        final android.support.v7.app.ActionBar actionBar = getSupportActionBar();
         actionBar.setHomeButtonEnabled(true);
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+        actionBar.setNavigationMode(android.support.v7.app.ActionBar.NAVIGATION_MODE_TABS);
 
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mAppSectionsPagerAdapter);
@@ -52,18 +54,34 @@ public class AttentionActivity extends FragmentActivity implements ActionBar.Tab
         }
     }
 
+//    @Override
+//    public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
+//        mViewPager.setCurrentItem(tab.getPosition());
+//    }
+//
+//    @Override
+//    public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction ft) {
+//
+//    }
+//
+//    @Override
+//    public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
+//
+//    }
+
     @Override
-    public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
+    public void onTabSelected(android.support.v7.app.ActionBar.Tab tab, android.support.v4.app.FragmentTransaction ft) {
         mViewPager.setCurrentItem(tab.getPosition());
-    }
-
-    @Override
-    public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction ft) {
 
     }
 
     @Override
-    public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
+    public void onTabUnselected(android.support.v7.app.ActionBar.Tab tab, android.support.v4.app.FragmentTransaction ft) {
+
+    }
+
+    @Override
+    public void onTabReselected(android.support.v7.app.ActionBar.Tab tab, android.support.v4.app.FragmentTransaction ft) {
 
     }
 
