@@ -10,6 +10,7 @@
         android:id="@+id/iv_group_fb"
         android:layout_width="48dp"
         android:layout_height="48dp"
+        android:layout_marginLeft="16dp"
         android:src="@drawable/mkt_icon_72"
         />
 
@@ -21,15 +22,13 @@
 
         <TextView
             android:id="@+id/tv_group_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/first_black_group_name"
             android:text="陰陽師"
             />
 
         <TextView
             android:id="@+id/tv_group_aka"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/first_black_group_aka"
             android:text="mkt"
             />
 

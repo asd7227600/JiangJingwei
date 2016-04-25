@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/lightBlack"
     android:layout_margin="8dp">
 
     <ImageView
@@ -17,34 +18,26 @@
 
     <TextView
         android:id="@+id/tv_item_advantage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/first_black_item_advantage"
         android:text="Advantage"
-        android:layout_margin="4dp"
 
         />
     <TextView
         android:id="@+id/tv_item_disadvantage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/first_black_item_disadvantage"
         android:text="Disadvantage"
-        android:layout_margin="4dp"
 
         />
     <TextView
         android:id="@+id/tv_item_evaluate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/first_black_item_evaluate"
         android:text="Evaluate"
-        android:layout_margin="4dp"
 
         />
     <TextView
         android:id="@+id/tv_item_remark"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/first_black_item_remark"
         android:text="Remark"
-        android:layout_margin="4dp"
 
         />
 

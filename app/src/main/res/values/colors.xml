@@ -7,4 +7,7 @@
     <color name="black">#000</color>
     <color name="lightBlack">#2B2B2B</color>
     <color name="eye_green">#CAEACE</color>
+    <color name="orange">#FD8520</color>
+    <color name="light_blue">#3DA3EF</color>
+    <color name="ppp">#8481FF</color>
 </resources>
