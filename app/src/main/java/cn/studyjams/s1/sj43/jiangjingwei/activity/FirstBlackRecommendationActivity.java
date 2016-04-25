@@ -24,8 +24,17 @@ public class FirstBlackRecommendationActivity extends AppCompatActivity {
     private ExpandableListView elv;
     private FirstBlackAdapter mAdapter = null;
 
-    private int[] pic = {R.drawable.nnl_icon_72, R.drawable.mkt_icon_72, R
-            .drawable.xibi_icon_72, R.drawable.nobra_icon_72};
+    private int[] pic = {
+            R.drawable.nnl, R.drawable.legend, R.drawable.loli_milk,
+            R.drawable.black_ice, R.drawable.mkt, R.drawable.harry, R.drawable.dragon,
+            R.drawable.pink_bitch, R.drawable.jiegeng, R.drawable.blackblack,
+            R.drawable.xibi, R.drawable.bean_sprout, R.drawable.young_sister_shield,
+            R.drawable.one_horn, R.drawable.thief, R.drawable.diaomao,
+            R.drawable.black_soldier, R.drawable.elder_sisiter_shield, R.drawable.xingcun,
+            R.drawable.sow, R.drawable.poi, R.drawable.magic_shield, R.drawable.fatter,
+            R.drawable.moon_shadow, R.drawable.fighter_king, R.drawable.nezha,
+            R.drawable.devil_god, R.drawable.fox, R.drawable.black_time_witch};
+
     private String[] name;
     private String[] aka;
     private String[] advantage;
@@ -62,7 +71,7 @@ public class FirstBlackRecommendationActivity extends AppCompatActivity {
     }
 
     private void initNum() {
-        num = 4;
+        num = 29;
     }
 
     private void initData() {
