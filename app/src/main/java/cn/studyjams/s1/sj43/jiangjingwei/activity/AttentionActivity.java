@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 
 
 import cn.studyjams.s1.sj43.jiangjingwei.R;
@@ -15,6 +16,7 @@ import cn.studyjams.s1.sj43.jiangjingwei.fragment.AttentionFragment;
 
 public class AttentionActivity extends FragmentActivity implements ActionBar.TabListener {
 
+    private static final String TAG = "Attention";
     ViewPager mViewPager;
     AppSectionsPagerAdapter mAppSectionsPagerAdapter;
 
@@ -41,7 +43,11 @@ public class AttentionActivity extends FragmentActivity implements ActionBar.Tab
         });
 
         for (int i = 0; i < mAppSectionsPagerAdapter.getCount(); i++) {
-            actionBar.newTab().setText(mAppSectionsPagerAdapter.getPageTitle(i)).setTabListener(this);
+            Log.d(TAG, "onCreate: the Adapter.getPageTitle(i) is: " +
+                    mAppSectionsPagerAdapter.getPageTitle(i));
+            actionBar.addTab(actionBar.newTab().setText(mAppSectionsPagerAdapter
+                    .getPageTitle
+                    (i)).setTabListener(this));
 
         }
     }
@@ -90,26 +96,26 @@ public class AttentionActivity extends FragmentActivity implements ActionBar.Tab
 
         @Override
         public CharSequence getPageTitle(int position) {
-//            switch (position) {
-//                case 0:
-//                    return "绝对别做的事";
-//
-//                case 1:
-//                    return "正确的态度";
-//
-//                case 2:
-//                    return "踏上正轨";
-//
-//                default:
-//                    return null;
-//            }
-            if (position == 0) {
-                return "绝对别做的事";
-            } else if (position == 1) {
-                return "正确的态度";
-            } else {
-                return "踏上正轨";
+            switch (position) {
+                case 0:
+                    return "绝对别做的事";
+
+                case 1:
+                    return "正确的态度";
+
+                case 2:
+                    return "踏上正轨";
+
+                default:
+                    return null;
             }
+//            if (position == 0) {
+//                return "绝对别做的事";
+//            } else if (position == 1) {
+//                return "正确的态度";
+//            } else {
+//                return "踏上正轨";
+//            }
         }
     }
 

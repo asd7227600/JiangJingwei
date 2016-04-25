@@ -28,6 +28,7 @@ public class FirstPickActivity extends FragmentActivity {
 
         markdownView.loadMarkdownFile("file:///android_asset/first_pick.md");
 
+        markdownView.setVisibility(View.INVISIBLE);
         Log.d(TAG, "onCreate: end of markdownView");
 
     }

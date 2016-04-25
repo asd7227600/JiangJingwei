@@ -12,9 +12,10 @@
         android:text="@string/first_pick"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ShowText"
+        android:text="点击显示"
+        android:background="@color/eye_green"
         android:onClick="showText"/>
 
     <ScrollView
@@ -32,12 +33,7 @@
 
     </ScrollView>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Test"
 
-        />
 
 
 
