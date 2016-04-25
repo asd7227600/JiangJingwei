@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="8dp">
+
+    <ImageView
+        android:id="@+id/iv_item"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/xibi_icon_72"
+        android:layout_margin="8dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_item_advantage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Advantage"
+        android:layout_margin="4dp"
+
+        />
+    <TextView
+        android:id="@+id/tv_item_disadvantage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Disadvantage"
+        android:layout_margin="4dp"
+
+        />
+    <TextView
+        android:id="@+id/tv_item_evaluate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Evaluate"
+        android:layout_margin="4dp"
+
+        />
+    <TextView
+        android:id="@+id/tv_item_remark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remark"
+        android:layout_margin="4dp"
+
+        />
+
+
+</LinearLayout>

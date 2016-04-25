@@ -8,15 +8,16 @@
     tools:context="cn.studyjams.s1.sj43.jiangjingwei.activity.FirstPickActivity">
 
     <TextView
+        android:id="@+id/tv_first_pick_title"
         style="@style/CommonTitle"
         android:text="@string/first_pick"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="点击显示"
-        android:background="@color/eye_green"
-        android:onClick="showText"/>
+        android:text="查看首抽黑推荐"
+        android:background="@drawable/button_selected"
+        android:onClick="toRecommendation"/>
 
     <ScrollView
         android:layout_width="match_parent"

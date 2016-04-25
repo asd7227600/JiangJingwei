@@ -1,5 +1,6 @@
 package cn.studyjams.s1.sj43.jiangjingwei.activity;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
@@ -28,22 +29,26 @@ public class FirstPickActivity extends FragmentActivity {
 
         markdownView.loadMarkdownFile("file:///android_asset/first_pick.md");
 
-        markdownView.setVisibility(View.INVISIBLE);
-        Log.d(TAG, "onCreate: end of markdownView");
 
     }
 
-    public void showText(View view) {
-        if (markdownView.getVisibility() == View.VISIBLE) {
-            Log.d(TAG, "showText: the view's visible is: " + markdownView
-                    .getVisibility());
-                    Log.d(TAG, "showText: set invisible");
-            markdownView.setVisibility(View.GONE);
-            Log.d(TAG, "showText: the view's visible is: " + markdownView
-                    .getVisibility());
-        } else {
-            Log.d(TAG, "showText: set visible");
-            markdownView.setVisibility(View.VISIBLE);
-        }
+//    public void showText(View view) {
+//        if (markdownView.getVisibility() == View.VISIBLE) {
+//            Log.d(TAG, "showText: the view's visible is: " + markdownView
+//                    .getVisibility());
+//                    Log.d(TAG, "showText: set invisible");
+//            markdownView.setVisibility(View.GONE);
+//            Log.d(TAG, "showText: the view's visible is: " + markdownView
+//                    .getVisibility());
+//        } else {
+//            Log.d(TAG, "showText: set visible");
+//            markdownView.setVisibility(View.VISIBLE);
+//        }
+//    }
+
+    public void toRecommendation(View view) {
+        Intent intent = new Intent(this, FirstBlackRecommendationActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
