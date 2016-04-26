@@ -1,6 +1,6 @@
 package cn.studyjams.s1.sj43.jiangjingwei.activity;
 
-import android.app.ActionBar;
+import android.support.v7.app.ActionBar;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -30,9 +30,9 @@ public class AttentionActivity extends AppCompatActivity implements android.supp
         mAppSectionsPagerAdapter = new AppSectionsPagerAdapter
                 (getSupportFragmentManager());
 
-        final android.support.v7.app.ActionBar actionBar = getSupportActionBar();
-        actionBar.setHomeButtonEnabled(true);
-        actionBar.setNavigationMode(android.support.v7.app.ActionBar.NAVIGATION_MODE_TABS);
+        final ActionBar actionBar = getSupportActionBar();
+        actionBar.setHomeButtonEnabled(false);
+        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mAppSectionsPagerAdapter);
@@ -40,7 +40,7 @@ public class AttentionActivity extends AppCompatActivity implements android.supp
                 .SimpleOnPageChangeListener() {
             @Override
             public void onPageSelected(int position) {
-                super.onPageSelected(position);
+                actionBar.setSelectedNavigationItem(position);
             }
         });
 

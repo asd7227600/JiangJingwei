@@ -29,6 +29,8 @@
         </activity>
         <activity android:name=".activity.FirstBlackRecommendationActivity">
         </activity>
+        <activity android:name=".activity.WorthBuildCollectionActivity">
+        </activity>
     </application>
 
 </manifest>

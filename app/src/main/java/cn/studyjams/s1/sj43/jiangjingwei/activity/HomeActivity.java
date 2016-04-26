@@ -119,7 +119,8 @@ public class HomeActivity extends FragmentActivity implements AdapterView
                 startActivity(intent1);
                 break;
             case 2:
-
+                Intent intent = new Intent(this, BuildTeamActivity.class);
+                startActivity(intent);
                 break;
             case 3:
 

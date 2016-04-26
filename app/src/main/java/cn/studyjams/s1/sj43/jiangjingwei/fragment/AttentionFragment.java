@@ -25,6 +25,7 @@ public class AttentionFragment extends Fragment {
     private static String[] file = {"file:///android_asset/never_do.md",
             "file:///android_asset/right_attitude.md",
             "file:///android_asset/gogogo.md"};
+    private static String css = "file:///android_asset/foghorn.css";
 
     public AttentionFragment(int position) {
         this.position = position;
@@ -33,15 +34,16 @@ public class AttentionFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        switch (position) {
-            case 0:
-                return getView(inflater, container, position);
-            case 1:
-                return getView(inflater, container, position);
-            case 2:
-                return getView(inflater, container, position);
-        }
-        return null;
+//        switch (position) {
+//            case 0:
+//                return getView(inflater, container, position);
+//            case 1:
+//                return getView(inflater, container, position);
+//            case 2:
+//                return getView(inflater, container, position);
+//        }
+
+        return getView(inflater, container, position);
     }
 
     @NonNull
@@ -50,7 +52,7 @@ public class AttentionFragment extends Fragment {
         View view = inflater.inflate(layout[position],
                 container, false);
         markdownView = (MarkdownView) view.findViewById(mv[position]);
-        markdownView.loadMarkdownFile(file[position]);
+        markdownView.loadMarkdownFile(file[position],css);
         return view;
     }
 }

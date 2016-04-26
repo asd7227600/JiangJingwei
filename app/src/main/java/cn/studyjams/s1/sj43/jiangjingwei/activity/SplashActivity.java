@@ -36,7 +36,7 @@ public class SplashActivity extends FragmentActivity {
                 finish();
             }
 
-        }, 3000);
+        }, 1500);
     }
 
     @Override

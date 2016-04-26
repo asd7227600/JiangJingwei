@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <us.feras.mdv.MarkdownView
+        android:id="@+id/mv_build_team_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </us.feras.mdv.MarkdownView>
+
+    <Button
+        android:id="@+id/btn_worth_build"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/worth_build"
+        />
+
+</LinearLayout>

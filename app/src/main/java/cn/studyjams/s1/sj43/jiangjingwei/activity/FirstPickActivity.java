@@ -27,7 +27,8 @@ public class FirstPickActivity extends FragmentActivity {
         markdownView = (MarkdownView) findViewById(R.id.mv_first_pick);
 //        markdownView.loadMarkdown("## The Title");
 
-        markdownView.loadMarkdownFile("file:///android_asset/first_pick.md");
+        markdownView.loadMarkdownFile("file:///android_asset/first_pick.md",
+                "file:///android_asset/foghorn.css");
 
 
     }
