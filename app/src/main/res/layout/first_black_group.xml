@@ -10,7 +10,7 @@
         android:id="@+id/iv_group_fb"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginLeft="32dp"
         android:src="@drawable/mkt_icon_72"
         />
 

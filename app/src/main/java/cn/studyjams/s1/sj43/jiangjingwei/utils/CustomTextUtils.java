@@ -44,4 +44,24 @@ public class CustomTextUtils {
     };
 
 
+    public static java.lang.String[] file_pac = {
+            "file:///android_asset/shiLian.md",
+            "file:///android_asset/shouJi.md",
+            "file:///android_asset/muChang.md",
+            "file:///android_asset/GR.md",
+            "file:///android_asset/taoFa.md",
+            "file:///android_asset/yaoRi.md",
+            "file:///android_asset/jueXing.md",
+            "file:///android_asset/fuKe.md"
+    };
+    public static String[] title_pac = {
+            "试炼",
+            "收集",
+            "牧场",
+            "Gold Rush",
+            "大讨伐",
+            "曜日1.5倍",
+            "觉醒宝珠1.5倍",
+            "复刻活动"
+    };
 }
