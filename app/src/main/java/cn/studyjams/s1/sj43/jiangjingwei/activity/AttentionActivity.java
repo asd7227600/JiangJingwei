@@ -54,20 +54,6 @@ public class AttentionActivity extends AppCompatActivity implements android.supp
         }
     }
 
-//    @Override
-//    public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
-//        mViewPager.setCurrentItem(tab.getPosition());
-//    }
-//
-//    @Override
-//    public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction ft) {
-//
-//    }
-//
-//    @Override
-//    public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
-//
-//    }
 
     @Override
     public void onTabSelected(android.support.v7.app.ActionBar.Tab tab, android.support.v4.app.FragmentTransaction ft) {
@@ -127,13 +113,7 @@ public class AttentionActivity extends AppCompatActivity implements android.supp
                 default:
                     return null;
             }
-//            if (position == 0) {
-//                return "绝对别做的事";
-//            } else if (position == 1) {
-//                return "正确的态度";
-//            } else {
-//                return "踏上正轨";
-//            }
+//
         }
     }
 

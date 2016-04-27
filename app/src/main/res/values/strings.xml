@@ -4,4 +4,5 @@
     <string name="splash_title">千年新人攻略</string>
     <string name="first_pick">关于首抽</string>
     <string name="worth_build">查看值得培养的单位</string>
+    <string name="collapseView">收起简介并查看单位</string>
 </resources>

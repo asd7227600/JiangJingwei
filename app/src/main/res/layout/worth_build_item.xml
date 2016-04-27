@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="72dp"
+
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_worth_build"
+            style="@style/icon"
+            android:src="@drawable/xibi_icon_72"
+            />
+
+        <TextView
+            android:id="@+id/tv_worth_build_name"
+            style="@style/first_black_group_name"
+            android:text="NNL"
+            android:layout_gravity="center_horizontal"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_worth_build_introduce"
+        android:background="@color/lightBlack"
+        style="@style/first_black_item_advantage"
+        android:text="黑皮弓，与其他银弓相比，拥有更高的面板攻击。攻击I技能可以在一定程度上缓解银弓面板低的劣势，并且比较容易升级。
+虽然弓兵ソーマ（索玛）拥有30点初期好感，但是面板和技能的劣势在中期就会很快的暴露出来，因此在没有更好的远程物理职业的情况下，银弓只推荐育成这只。"/>
+
+</LinearLayout>

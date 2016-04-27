@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import cn.studyjams.s1.sj43.jiangjingwei.R;
+import cn.studyjams.s1.sj43.jiangjingwei.utils.CustomTextUtils;
 import us.feras.mdv.MarkdownView;
 
 public class BuildTeamActivity extends AppCompatActivity implements ActionBar
@@ -104,7 +105,6 @@ public class BuildTeamActivity extends AppCompatActivity implements ActionBar
     public static class TextOnlyFragment extends Fragment {
 
         private int position;
-        private String css = "file:///android_asset/foghorn.css";
         private String[] file = {"file:///android_asset/base_team.md",
                 "file:///android_asset/first_build.md",
                 "file:///android_asset/worth_build.md"};
@@ -124,7 +124,7 @@ public class BuildTeamActivity extends AppCompatActivity implements ActionBar
 
 //            Bundle args = getArguments();
 
-                mv_text.loadMarkdownFile(file[position], css);
+                mv_text.loadMarkdownFile(file[position], CustomTextUtils.css);
                 return view;
 
             } else {
@@ -135,7 +135,7 @@ public class BuildTeamActivity extends AppCompatActivity implements ActionBar
 
 //            Bundle args = getArguments();
 
-                mv_text.loadMarkdownFile(file[position], css);
+                mv_text.loadMarkdownFile(file[position], CustomTextUtils.css);
 
                 Button btn = (Button) view.findViewById(R.id.btn_worth_build);
                 btn.setOnClickListener(new View.OnClickListener() {

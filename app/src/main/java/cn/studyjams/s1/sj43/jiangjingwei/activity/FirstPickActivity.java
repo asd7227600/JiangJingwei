@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import cn.studyjams.s1.sj43.jiangjingwei.R;
+import cn.studyjams.s1.sj43.jiangjingwei.utils.CustomTextUtils;
 import us.feras.mdv.MarkdownView;
 
 public class FirstPickActivity extends FragmentActivity {
@@ -28,7 +29,7 @@ public class FirstPickActivity extends FragmentActivity {
 //        markdownView.loadMarkdown("## The Title");
 
         markdownView.loadMarkdownFile("file:///android_asset/first_pick.md",
-                "file:///android_asset/foghorn.css");
+                CustomTextUtils.css);
 
 
     }
