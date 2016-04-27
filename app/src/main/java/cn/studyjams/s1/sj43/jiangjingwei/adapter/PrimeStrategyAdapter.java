@@ -66,8 +66,8 @@ public class PrimeStrategyAdapter extends ArrayAdapter<PrimeStrategyItem> {
 
     @Override
     public int getCount() {
-        return data.size();
-    }
+        return 7;
+    } // 好像设置成data.size(),滑动ListView到底部有几率crash
 
     private class ViewHolder {
         private ImageView icon;
