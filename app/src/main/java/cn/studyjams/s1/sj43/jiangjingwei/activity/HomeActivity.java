@@ -109,29 +109,31 @@ public class HomeActivity extends FragmentActivity implements AdapterView
         Log.d(TAG, "onItemClick: the position is: " + position + ", and the " +
                 "id is: " + id);
 
+        Intent intent;
         switch ((int) id) {
             case 0:
-                Intent intent0 = new Intent(this, FirstPickActivity.class);
-                startActivity(intent0);
+                intent = new Intent(this, FirstPickActivity.class);
                 break;
             case 1:
-                Intent intent1 = new Intent(this, AttentionActivity.class);
-                startActivity(intent1);
+                intent = new Intent(this, AttentionActivity.class);
                 break;
             case 2:
-                Intent intent = new Intent(this, BuildTeamActivity.class);
-                startActivity(intent);
+                intent = new Intent(this, BuildTeamActivity.class);
                 break;
             case 3:
-
+                intent = new Intent(this, PrimeStrategyActivity.class);
                 break;
             case 4:
-
+                intent = new Intent(this, PrimeActivityChooseActivity.class);
                 break;
             case 5:
-
+                intent = new Intent(this, FeedTutorialsActivity.class);
                 break;
+            default:
+                intent = new Intent(this, HomeActivity.class);
         }
+        startActivity(intent);
+
 
     }
 }

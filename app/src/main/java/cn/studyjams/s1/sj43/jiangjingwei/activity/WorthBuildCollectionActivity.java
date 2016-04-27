@@ -11,6 +11,7 @@ import android.support.v4.app.TaskStackBuilder;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -115,6 +116,7 @@ public class WorthBuildCollectionActivity extends AppCompatActivity {
 
     public static class WorthBuildCollectionFragment extends Fragment {
 
+        private static final String TAG = "WBCollectionFragment";
         private WorthBuildItem item;
         private List<WorthBuildItem> lists = new ArrayList<>();
         public static final String ARG_POSITION = "position";
@@ -169,11 +171,12 @@ public class WorthBuildCollectionActivity extends AppCompatActivity {
         }
 
         private void initData() {
+            Log.d(TAG, "initData: position is: " + position + ", and the listNum is: " + listNum);
             for (int i = 0; i < listNum; i++) {
                 item = new WorthBuildItem(
-                        WorthBuildContent.image[position][i],
-                        WorthBuildContent.name[position][i],
-                        WorthBuildContent.introduce[position][i]
+                        WorthBuildContent.image[position - 1][i],
+                        WorthBuildContent.name[position - 1][i],
+                        WorthBuildContent.introduce[position - 1][i]
                 );
                 lists.add(item);
             }

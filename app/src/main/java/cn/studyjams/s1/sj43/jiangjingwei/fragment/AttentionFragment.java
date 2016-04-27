@@ -32,12 +32,6 @@ public class AttentionFragment extends Fragment {
     public AttentionFragment() {
     }
 
-
-    @Override
-    public void setArguments(Bundle args) {
-        super.setArguments(args);
-    }
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
