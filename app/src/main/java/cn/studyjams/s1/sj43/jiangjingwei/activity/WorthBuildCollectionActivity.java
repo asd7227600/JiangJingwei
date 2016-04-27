@@ -95,7 +95,7 @@ public class WorthBuildCollectionActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             Fragment fragment = new WorthBuildCollectionFragment();
             Bundle args = new Bundle();
-            args.putInt(WorthBuildCollectionFragment.ARG_POSITION, position + 1);
+            args.putInt(WorthBuildCollectionFragment.ARG_POSITION, position);
             args.putInt(WorthBuildCollectionFragment.ARG_LISTNUM, listNum[position]);
             fragment.setArguments(args);
             return fragment;
@@ -174,9 +174,9 @@ public class WorthBuildCollectionActivity extends AppCompatActivity {
             Log.d(TAG, "initData: position is: " + position + ", and the listNum is: " + listNum);
             for (int i = 0; i < listNum; i++) {
                 item = new WorthBuildItem(
-                        WorthBuildContent.image[position - 1][i],
-                        WorthBuildContent.name[position - 1][i],
-                        WorthBuildContent.introduce[position - 1][i]
+                        WorthBuildContent.image[position][i],
+                        WorthBuildContent.name[position][i],
+                        WorthBuildContent.introduce[position][i]
                 );
                 lists.add(item);
             }
