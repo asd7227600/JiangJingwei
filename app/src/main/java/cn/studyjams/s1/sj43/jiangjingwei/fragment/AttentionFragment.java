@@ -27,8 +27,13 @@ public class AttentionFragment extends Fragment {
             "file:///android_asset/gogogo.md"};
     private static String css = "file:///android_asset/foghorn.css";
 
-    public AttentionFragment(int position) {
-        this.position = position;
+    public AttentionFragment() {
+    }
+
+
+    @Override
+    public void setArguments(Bundle args) {
+        super.setArguments(args);
     }
 
     @Nullable
@@ -42,6 +47,7 @@ public class AttentionFragment extends Fragment {
 //            case 2:
 //                return getView(inflater, container, position);
 //        }
+        position = getArguments().getInt("test");
 
         return getView(inflater, container, position);
     }
@@ -51,6 +57,7 @@ public class AttentionFragment extends Fragment {
             container, int position) {
         View view = inflater.inflate(layout[position],
                 container, false);
+
         markdownView = (MarkdownView) view.findViewById(mv[position]);
         markdownView.loadMarkdownFile(file[position],css);
         return view;

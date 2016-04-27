@@ -82,11 +82,23 @@ public class AttentionActivity extends AppCompatActivity implements android.supp
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    return new AttentionFragment(position);
+                    Bundle b1 = new Bundle();
+                    b1.putInt("test", position);
+                    AttentionFragment fragment1 = new AttentionFragment();
+                    fragment1.setArguments(b1);
+                    return fragment1;
                 case 1:
-                    return new AttentionFragment(position);
+                    Bundle b2 = new Bundle();
+                    b2.putInt("test", position);
+                    AttentionFragment fragment2 = new AttentionFragment();
+                    fragment2.setArguments(b2);
+                    return fragment2;
                 case 2:
-                    return new AttentionFragment(position);
+                    Bundle b3 = new Bundle();
+                    b3.putInt("test", position);
+                    AttentionFragment fragment3 = new AttentionFragment();
+                    fragment3.setArguments(b3);
+                    return fragment3;
                 default:
 
             }
