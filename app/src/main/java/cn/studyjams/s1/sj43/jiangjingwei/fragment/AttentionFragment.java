@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import cn.studyjams.s1.sj43.jiangjingwei.R;
+import cn.studyjams.s1.sj43.jiangjingwei.utils.CustomTextUtils;
 import us.feras.mdv.MarkdownView;
 
 /**
@@ -16,6 +17,7 @@ import us.feras.mdv.MarkdownView;
  */
 public class AttentionFragment extends Fragment {
 
+    public static final String ARG_POSITION = "position";
     private MarkdownView markdownView;
     private int position;
     private static int[] mv = {R.id.mv_never_do_fragment, R.id
@@ -25,7 +27,7 @@ public class AttentionFragment extends Fragment {
     private static String[] file = {"file:///android_asset/never_do.md",
             "file:///android_asset/right_attitude.md",
             "file:///android_asset/gogogo.md"};
-    private static String css = "file:///android_asset/foghorn.css";
+    private static String css = CustomTextUtils.css;
 
     public AttentionFragment() {
     }
@@ -39,15 +41,8 @@ public class AttentionFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-//        switch (position) {
-//            case 0:
-//                return getView(inflater, container, position);
-//            case 1:
-//                return getView(inflater, container, position);
-//            case 2:
-//                return getView(inflater, container, position);
-//        }
-        position = getArguments().getInt("test");
+
+        position = getArguments().getInt(ARG_POSITION);
 
         return getView(inflater, container, position);
     }

@@ -79,7 +79,11 @@ public class BuildTeamActivity extends AppCompatActivity implements ActionBar
 
         @Override
         public Fragment getItem(int position) {
-            return new TextOnlyFragment(position);
+            Bundle bundle = new Bundle();
+            bundle.putInt(TextOnlyFragment.TAG, position);
+            TextOnlyFragment fragment = new TextOnlyFragment();
+            fragment.setArguments(bundle);
+            return fragment;
         }
 
         @Override
@@ -104,18 +108,22 @@ public class BuildTeamActivity extends AppCompatActivity implements ActionBar
 
     public static class TextOnlyFragment extends Fragment {
 
+        private static final java.lang.String TAG = "TextOnlyFragment";
         private int position;
         private String[] file = {"file:///android_asset/base_team.md",
                 "file:///android_asset/first_build.md",
                 "file:///android_asset/worth_build.md"};
 
-        public TextOnlyFragment(int position) {
-            this.position = position;
+        public TextOnlyFragment() {
+
         }
 
         @Nullable
         @Override
         public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+            position = getArguments().getInt(TAG);
+
             if (position != 2) {
                 View view = inflater.inflate(R.layout.fragment_build_team_text,
                         container, false);

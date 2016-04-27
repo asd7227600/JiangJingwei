@@ -1,14 +1,18 @@
 package cn.studyjams.s1.sj43.jiangjingwei.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.app.NavUtils;
+import android.support.v4.app.TaskStackBuilder;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -47,6 +51,28 @@ public class WorthBuildCollectionActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                Intent intent = new Intent(this, BuildTeamActivity.class);
+                if (NavUtils.shouldUpRecreateTask(this, intent)) {
+
+                    TaskStackBuilder.from(this)
+
+                            .addNextIntent(intent)
+                            .startActivities();
+
+                    finish();
+
+                } else {
+
+                    NavUtils.navigateUpTo(this, intent);
+                }
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     public static class WorthBuildCollectionPagerAdapter extends FragmentStatePagerAdapter {
 
 
@@ -66,9 +92,10 @@ public class WorthBuildCollectionActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            Fragment fragment = new WorthBuildCollectionFragment(position, listNum[position]);
+            Fragment fragment = new WorthBuildCollectionFragment();
             Bundle args = new Bundle();
-            args.putInt(WorthBuildCollectionFragment.ARG_OBJECT, position + 1);
+            args.putInt(WorthBuildCollectionFragment.ARG_POSITION, position + 1);
+            args.putInt(WorthBuildCollectionFragment.ARG_LISTNUM, listNum[position]);
             fragment.setArguments(args);
             return fragment;
         }
@@ -82,29 +109,33 @@ public class WorthBuildCollectionActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             return career[position] + "系列" + "(" + aka[position] + ")";
         }
+
+
     }
 
     public static class WorthBuildCollectionFragment extends Fragment {
 
         private WorthBuildItem item;
         private List<WorthBuildItem> lists = new ArrayList<>();
-        public static final String ARG_OBJECT = "object";
+        public static final String ARG_POSITION = "position";
+        public static final String ARG_LISTNUM = "listNum";
         private int position;
         private int listNum;
 
 
-        public WorthBuildCollectionFragment(int position, int listNum) {
-            this.position = position;
-            this.listNum = listNum;
+        public WorthBuildCollectionFragment() {
         }
 
         @Nullable
         @Override
         public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup
                 container, @Nullable Bundle savedInstanceState) {
+
+            position = getArguments().getInt(ARG_POSITION);
+            listNum = getArguments().getInt(ARG_LISTNUM);
+
             View view = inflater.inflate(R.layout.activity_collection_worth_build,
                     container, false);
-//            Bundle args = getArguments();
 
             Button btn = (Button) view.findViewById(R.id.btn_worth_build_collapse);
             final MarkdownView mv = (MarkdownView) view.findViewById(R.id.mv_worth_build);
@@ -147,5 +178,7 @@ public class WorthBuildCollectionActivity extends AppCompatActivity {
                 lists.add(item);
             }
         }
+
+
     }
 }
