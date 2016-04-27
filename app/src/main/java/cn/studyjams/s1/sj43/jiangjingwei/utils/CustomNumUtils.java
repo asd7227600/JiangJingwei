@@ -7,4 +7,5 @@ public class CustomNumUtils {
     public static int quantity_prime_strategy_list = 7;
 
 
+    public static int quantity_feed_tutorial_list = 14;
 }

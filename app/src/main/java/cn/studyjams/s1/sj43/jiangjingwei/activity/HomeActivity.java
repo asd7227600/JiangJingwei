@@ -23,7 +23,7 @@ public class HomeActivity extends FragmentActivity implements AdapterView
     private static final String TAG = "HomeActivity";
     private List<HomeItem> data;
     private final String[] TITLE = {"关于首抽", "开局注意", "组建队伍", "初期套路",
-            "初期活动", "还没想好"};
+            "初期活动", "狗粮基础"};
     private final int[] ICON = {R.drawable.xibi_icon_72, R.drawable.dk_icon_72,
                                 R.drawable.mkt_icon_72, R.drawable.nnl_icon_72,
                                 R.drawable.longji_icon_72, R.drawable.nobra_icon_72};
@@ -135,5 +135,10 @@ public class HomeActivity extends FragmentActivity implements AdapterView
         startActivity(intent);
 
 
+    }
+
+    public void toThanks(View view) {
+        Intent intent = new Intent(this, ThanksActivity.class);
+        startActivity(intent);
     }
 }

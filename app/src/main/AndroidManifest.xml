@@ -37,6 +37,8 @@
         </activity>
         <activity android:name=".activity.FeedTutorialsActivity">
         </activity>
+        <activity android:name=".activity.ThanksActivity">
+        </activity>
     </application>
 
 </manifest>

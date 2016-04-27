@@ -52,7 +52,9 @@ public class PrimeStrategyActivity extends AppCompatActivity implements ActionBa
         });
 
         for (int i = 0; i < adapter.getCount(); i++) {
-            actionBar.addTab(actionBar.newTab().setText(adapter.getPageTitle(i)).setTabListener(this));
+            actionBar.addTab(actionBar.newTab()
+                    .setText(adapter.getPageTitle(i))
+                    .setTabListener(this));
         }
 
     }
