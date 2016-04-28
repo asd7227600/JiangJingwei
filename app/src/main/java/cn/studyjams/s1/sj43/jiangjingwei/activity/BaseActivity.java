@@ -1,6 +1,7 @@
 package cn.studyjams.s1.sj43.jiangjingwei.activity;
 
 import android.os.Bundle;
+import android.os.Vibrator;
 
 import me.imid.swipebacklayout.lib.SwipeBackLayout;
 import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
@@ -17,10 +18,40 @@ public abstract class BaseActivity extends SwipeBackActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initValue();
-        initData();
+        initView();
+
+        mKeyTrackingMode = "fffuck";
+        mSwipeBackLayout = getSwipeBackLayout();
+
+        mSwipeBackLayout.setEdgeSize(100);
+        mSwipeBackLayout.setEdgeTrackingEnabled(SwipeBackLayout.EDGE_LEFT);
+
+        mSwipeBackLayout.addSwipeListener(new SwipeBackLayout.SwipeListener() {
+            @Override
+            public void onScrollStateChange(int state, float scrollPercent) {
+
+            }
+
+            @Override
+            public void onEdgeTouch(int edgeFlag) {
+
+            }
+
+            @Override
+            public void onScrollOverThreshold() {
+                vibrate(VIBRATE_DURATION);
+            }
+        });
     }
 
-    protected abstract void initData();
+    private void vibrate(long duration) {
+        Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+        long[] pattern = {20, duration};
+        vibrator.vibrate(pattern, -1);
+    }
+
+
+    protected abstract void initView();
 
     protected abstract void initValue();
 }

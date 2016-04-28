@@ -23,7 +23,7 @@ import cn.studyjams.s1.sj43.jiangjingwei.adapter.HomeAdapter;
 import cn.studyjams.s1.sj43.jiangjingwei.bean.HomeItem;
 import cn.studyjams.s1.sj43.jiangjingwei.view.TextViewVertical;
 
-public class HomeActivity extends FragmentActivity implements AdapterView
+public class HomeActivity extends BaseActivity implements AdapterView
         .OnItemClickListener {
 
     private static final String TAG = "HomeActivity";
@@ -42,15 +42,7 @@ public class HomeActivity extends FragmentActivity implements AdapterView
     TextView tv_only_pic;
     TextView tv_qq_club;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        initValue();
-        initView();
-    }
-
-    private void initValue() {
+    protected void initValue() {
         data = new ArrayList<>();
         HomeItem item;
         for (int i = 0; i < TITLE.length; i++) {
@@ -62,7 +54,7 @@ public class HomeActivity extends FragmentActivity implements AdapterView
         }
     }
 
-    private void initView() {
+    protected void initView() {
         setContentView(R.layout.activity_home);
 
         tv_only_pic = (TextView) findViewById(R.id.tv_only_pic);
