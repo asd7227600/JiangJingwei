@@ -8,6 +8,7 @@ public class CustomTextUtils {
     public static final String ARG_POSITION = "position";
 
     public static String css = "file:///android_asset/foghorn.css";
+    public static String css1 = "file:///android_asset/alt.css";
 
     public static String[] file_prime_strategy = {
             "file:///android_asset/charm.md",

@@ -25,4 +25,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.3.0'
     compile project(':dynamicgrid')
+    compile 'me.imid.swipebacklayout.lib:library:1.0.0'
 }

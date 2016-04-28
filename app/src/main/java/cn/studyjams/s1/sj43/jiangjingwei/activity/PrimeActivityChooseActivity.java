@@ -1,28 +1,17 @@
 package cn.studyjams.s1.sj43.jiangjingwei.activity;
 
-import android.content.Intent;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.app.NavUtils;
-import android.support.v4.app.TaskStackBuilder;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBar;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ExpandableListView;
-import android.widget.Toast;
 
-import java.io.InputStream;
 import java.util.ArrayList;
 
 import cn.studyjams.s1.sj43.jiangjingwei.R;
 import cn.studyjams.s1.sj43.jiangjingwei.adapter.PAC_Adapter;
 import cn.studyjams.s1.sj43.jiangjingwei.bean.PAC_Group;
 import cn.studyjams.s1.sj43.jiangjingwei.bean.PAC_Item;
-import cn.studyjams.s1.sj43.jiangjingwei.utils.CustomImageUtils;
 import cn.studyjams.s1.sj43.jiangjingwei.utils.CustomTextUtils;
 
 public class PrimeActivityChooseActivity extends AppCompatActivity implements
@@ -48,19 +37,18 @@ public class PrimeActivityChooseActivity extends AppCompatActivity implements
         initData();
         initListener();
 
+
+
         elv.setAdapter(new PAC_Adapter(gData, iData, this));
+
         elv.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v,
                                         int groupPosition, int childPosition,
                                         long id) {
-                Toast.makeText(PrimeActivityChooseActivity.this, "You click the "
-                        + gData.get(groupPosition).getTitle(), Toast.LENGTH_SHORT).show();
                 return true;
             }
         });
-
-
 
 
     }

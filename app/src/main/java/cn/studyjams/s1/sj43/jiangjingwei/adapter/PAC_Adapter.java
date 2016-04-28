@@ -93,7 +93,7 @@ public class PAC_Adapter extends BaseExpandableListAdapter {
         } else {
             iHolder = (ViewHolderItem) convertView.getTag();
         }
-        iHolder.mvId.loadMarkdownFile(iData.get(groupPosition).getMv(), CustomTextUtils.css);
+        iHolder.mvId.loadMarkdownFile(iData.get(groupPosition).getMv(), CustomTextUtils.css1);
         return convertView;
     }
 
