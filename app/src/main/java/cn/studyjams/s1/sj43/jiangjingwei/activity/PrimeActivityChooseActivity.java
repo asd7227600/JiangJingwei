@@ -33,7 +33,7 @@ public class PrimeActivityChooseActivity extends AppCompatActivity implements
     private ExpandableListView elv;
     private int listNum;
     private ArrayList<PAC_Group> gData;
-    private PAC_Item iData;
+    private ArrayList<PAC_Item> iData;
     private int mLastOpenGroupPosition = -1;
 
 
@@ -72,10 +72,11 @@ public class PrimeActivityChooseActivity extends AppCompatActivity implements
 
     private void initData() {
         gData = new ArrayList<>();
+        iData = new ArrayList<>();
 
         for (int i = 0; i < listNum; i++) {
             gData.add(new PAC_Group(CustomTextUtils.title_pac[i]));
-            iData = new PAC_Item(CustomTextUtils.file_pac[i]);
+            iData.add(new PAC_Item(CustomTextUtils.file_pac[i]));
         }
     }
 

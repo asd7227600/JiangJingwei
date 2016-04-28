@@ -20,10 +20,10 @@ import us.feras.mdv.MarkdownView;
  */
 public class PAC_Adapter extends BaseExpandableListAdapter {
     private ArrayList<PAC_Group> gData;
-    private PAC_Item iData;
+    private ArrayList<PAC_Item> iData;
     private Context mContext;
 
-    public PAC_Adapter(ArrayList<PAC_Group> gData, PAC_Item iData,
+    public PAC_Adapter(ArrayList<PAC_Group> gData, ArrayList<PAC_Item> iData,
                        Context mContext) {
         this.gData = gData;
         this.iData = iData;
@@ -47,7 +47,7 @@ public class PAC_Adapter extends BaseExpandableListAdapter {
 
     @Override
     public PAC_Item getChild(int groupPosition, int childPosition) {
-        return iData;
+        return iData.get(groupPosition);
     }
 
     @Override
@@ -93,7 +93,7 @@ public class PAC_Adapter extends BaseExpandableListAdapter {
         } else {
             iHolder = (ViewHolderItem) convertView.getTag();
         }
-        iHolder.mvId.loadMarkdownFile(iData.getMv(), CustomTextUtils.css);
+        iHolder.mvId.loadMarkdownFile(iData.get(groupPosition).getMv(), CustomTextUtils.css);
         return convertView;
     }
 

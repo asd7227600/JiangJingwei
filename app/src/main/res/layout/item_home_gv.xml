@@ -4,13 +4,14 @@
     android:orientation="horizontal"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@drawable/antispam_report_button">
+    android:background="@drawable/item_home_selected">
 
     <ImageView
         android:id="@+id/iv_item_home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:src="@drawable/dk_icon_72"
+        android:layout_margin="5dp"
         />
 
     <LinearLayout

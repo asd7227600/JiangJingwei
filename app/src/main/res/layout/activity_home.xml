@@ -44,6 +44,18 @@
     </FrameLayout>
 
     <TextView
+        android:id="@+id/tv_only_pic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/only_pic_home"
+        android:layout_above="@+id/tv_qq_club"
+        android:layout_marginLeft="80dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="onlySeePic"
+        />
+
+    <TextView
+        android:id="@+id/tv_qq_club"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
         android:layout_width="wrap_content"
